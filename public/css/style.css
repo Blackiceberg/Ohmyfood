@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&family=Shrikhand&display=swap");
 html {
   box-sizing: border-box;
 }
@@ -347,6 +347,188 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  text-align: center;
+}
+header h1 {
+  font-size: 24px;
+  margin-top: 43px;
+  padding: 0 2em;
+}
+header div {
+  background-color: #eaeaea;
+  font-size: 12px;
+  font-weight: 500;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0.5px 2.1px 5px 0 inset;
+}
+header div i {
+  font-size: 16px;
+  align-self: center;
+  margin-right: 1em;
+}
+header div p {
+  font-size: 16px;
+  align-self: center;
+}
+header span {
+  font-weight: 100;
+  margin-bottom: 31px;
+  padding: 0 2em;
+}
+header button {
+  color: #fff;
+  width: 50%;
+  align-self: center;
+  font-weight: 500;
+  font-size: 12px;
+  background: linear-gradient(130deg, #f174da 0%, #a066da 100%);
+  border-radius: 25px;
+  height: 50px;
+  border: none;
+  margin-bottom: 57px;
+  box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  height: 10vh;
+}
+.nav a {
+  text-decoration: none;
+  font-family: "Shrikhand", cursive;
+  color: #101010;
+  font-size: 30px;
+}
+.nav-logo {
+  align-self: center;
+}
+
+main h2 {
+  padding: 2em 1em 1em;
+}
+
+.fonctionnement {
+  margin-bottom: 4.25em;
+}
+.fonctionnement ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.fonctionnement ul li {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.fonctionnement ul button {
+  display: flex;
+  justify-content: space-around;
+  font-size: 16px;
+  border-radius: 25px;
+  padding: 25px 10%;
+  width: 90%;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
+}
+.fonctionnement ul button i {
+  color: #7e7e7e;
+}
+.fonctionnement ul button:hover {
+  background-color: #f5edff;
+}
+.fonctionnement ul button:hover i {
+  color: #9356DC;
+}
+.fonctionnement ul span {
+  background-color: #9356DC;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 5px 8px;
+  color: #fff;
+  font-weight: 300;
+  left: 4%;
+  top: 30%;
+  position: absolute;
+}
+
+.restaurants {
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  padding-bottom: 3em;
+}
+.restaurants h2 {
+  align-self: flex-start;
+}
+.restaurants button {
+  display: flex;
+  flex-flow: wrap;
+  border: none;
+  width: 335px;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
+}
+.restaurants button img {
+  border-radius: 25px 25px 0 0;
+  height: 174px;
+  object-fit: cover;
+  width: 100%;
+}
+.restaurants button span {
+  font-weight: 500;
+  text-align: left;
+  padding: 1.5em 1.5em 1em 1em;
+  line-height: 1.5em;
+}
+.restaurants button span b {
+  font-weight: 100;
+}
+.restaurants button span:nth-child(3) {
+  text-align: end;
+  flex: 1;
+}
+.restaurants button span:nth-child(3) i {
+  background-clip: border-box;
+  font-size: 30px;
+}
+
+footer {
+  background-color: #353535;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  padding-bottom: 2em;
+}
+footer h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 18px;
+}
+footer a {
+  text-decoration: none;
+  color: #fff;
+  font-family: roboto;
+  font-size: 12px;
+}
+footer ul {
+  list-style: none;
 }
 
 /*# sourceMappingURL=style.css.map */

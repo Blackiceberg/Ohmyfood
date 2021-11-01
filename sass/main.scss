@@ -1,3 +1,230 @@
 @import "./base/base";
 @import "./base/normalize";
 @import "./base/typography";
+@import "./utiles/variables";
+
+
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+//////////////////////////////////////////////////////////////
+////////////                HEADER                ///////////
+////////////////////////////////////////////////////////////
+
+
+header{
+    display: flex;
+    flex-direction: column;
+    background-color: $couleur-gris01;
+    text-align: center;
+    h1{
+        font-size: 24px;
+        margin-top: 43px;
+        padding: 0 2em;
+
+    }
+    div{
+        background-color: $couleur-gris02;
+        font-size: 12px;
+        font-weight: 500;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        box-shadow: rgb(0 0 0 / 20%) 0.5px 2.1px 5px 0 inset;
+        
+        i{
+            font-size: 16px;
+            align-self: center;
+            margin-right: 1em;
+        }
+        p{
+            font-size: 16px;
+            align-self: center;
+        }
+
+    }
+    span{
+        font-weight: 100;
+        margin-bottom: 31px;
+        padding: 0 2em;
+    }
+    button{
+        color: $couleur-white;
+        width: 50%;
+        align-self: center;
+        font-weight: 500;
+        font-size: 12px;
+        background: linear-gradient(130deg, rgba(241,116,218,1) 0%, rgba(160,102,218,1) 100%);
+        border-radius: 25px;
+        height: 50px;
+        border:none;
+        margin-bottom:57px;
+        box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
+    }
+}
+
+//////////////////////////////////////////////////////////////
+////////////                 NAV                  ///////////
+////////////////////////////////////////////////////////////
+
+.nav{
+    display: flex;
+    justify-content: center;
+    background-color: $couleur-white;
+    height: 10vh;
+    a{
+        text-decoration: none;
+        font-family: 'Shrikhand', cursive;
+        color: $couleur-black;
+        font-size: 30px;
+    
+    }
+    &-logo{
+        align-self: center;
+    }
+}
+
+//////////////////////////////////////////////////////////////
+////////////                  MAIN                ///////////
+////////////////////////////////////////////////////////////
+
+main{
+    h2{
+        padding: 2em 1em 1em;
+    }
+}
+
+
+//////////////////////////////////////////////////////////////
+////////////           FONCTIONNEMENT             ///////////
+////////////////////////////////////////////////////////////
+
+
+.fonctionnement{
+    margin-bottom: 4.250em;
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        li{
+            display: flex;
+            justify-content: center;
+            position: relative;
+            
+        }
+        button{
+            display: flex;
+            justify-content: space-around;
+            font-size: 16px;
+            border-radius: 25px;
+            padding: 25px 10%;
+            width: 90%;
+            border: none;
+            box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
+            i{
+                color: $couleur-gris03;
+                
+            }
+
+        &:hover{
+            background-color: #f5edff;
+            i{
+                color: $couleur-primaire;
+                
+            }
+        }
+
+        }
+        span{
+            background-color: $couleur-primaire;
+            font-size: 12px;
+            border-radius: 50%;
+            padding: 5px 8px;
+            color: $couleur-white;
+            font-weight: 300;
+            left: 4%;
+            top:30%;
+            position: absolute;
+        }
+    }
+}
+
+//////////////////////////////////////////////////////////////
+////////////              RESTAURANTS             ///////////
+////////////////////////////////////////////////////////////
+
+.restaurants{
+    background-color: $couleur-gris01;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding-bottom: 3em;
+    h2{
+        align-self: flex-start;
+    }
+    button{
+        display: flex;
+        flex-flow: wrap;
+        border: none;
+        width: 335px;
+        background-color: $couleur-white;
+        border-radius: 25px;
+        box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
+
+        img{
+            border-radius: 25px  25px 0 0;
+            height: 174px;
+            object-fit: cover;
+            width: 100%;
+        }
+        span{
+            font-weight: 500;
+            text-align: left;
+            padding:  1.5em 1.5em 1em 1em;
+            line-height: 1.5em;
+            b{
+                font-weight: 100;
+            }
+            &:nth-child(3){
+                text-align: end;
+                flex: 1;
+                i{
+                    background-clip: border-box;
+                    font-size: 30px;
+                }
+            }
+        }
+      
+    }
+}
+
+
+//////////////////////////////////////////////////////////////
+////////////                FOOTER                ///////////
+////////////////////////////////////////////////////////////
+
+
+footer{
+    background-color: #353535;
+    color: $couleur-white;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    padding-bottom: 2em;
+
+    h1{
+        font-family: 'Shrikhand', cursive;
+        font-size: 18px;
+    }
+     a{
+         text-decoration: none;
+         color: $couleur-white;
+         font-family: roboto;
+         font-size: 12px;
+     }
+     ul{
+         list-style: none;
+     }
+}
