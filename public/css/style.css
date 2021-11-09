@@ -403,18 +403,26 @@ header button {
 
 .nav {
   display: flex;
-  justify-content: center;
   background-color: #fff;
   height: 10vh;
+  gap: 1.3em;
+  position: relative;
+}
+.nav-logo {
+  margin: auto;
+  position: relative !important;
+  left: 0% !important;
 }
 .nav a {
   text-decoration: none;
   font-family: "Shrikhand", cursive;
   color: #101010;
   font-size: 30px;
-}
-.nav-logo {
   align-self: center;
+}
+.nav a:first-child {
+  position: absolute;
+  left: 5%;
 }
 
 main h2 {
@@ -477,38 +485,93 @@ main h2 {
   align-self: flex-start;
 }
 .restaurants button {
+  border: none;
+}
+.restaurants button a {
   display: flex;
   flex-flow: wrap;
-  border: none;
   width: 335px;
+  text-decoration: none;
+  color: #101010;
   background-color: #fff;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
 }
-.restaurants button img {
+.restaurants button a img {
   border-radius: 25px 25px 0 0;
   height: 174px;
   object-fit: cover;
   width: 100%;
 }
-.restaurants button span {
+.restaurants button a span {
   font-weight: 500;
   text-align: left;
   padding: 1.5em 1.5em 1em 1em;
   line-height: 1.5em;
 }
-.restaurants button span b {
+.restaurants button a span b {
   font-weight: 100;
 }
-.restaurants button span:nth-child(3) {
+.restaurants button a span:nth-child(3) {
   text-align: end;
   flex: 1;
 }
-.restaurants button span:nth-child(3) i {
+.restaurants button a span:nth-child(3) i {
   background-clip: border-box;
   font-size: 30px;
 }
 
+.cartes {
+  background: #f6f6f6;
+  position: relative;
+  border-radius: 3em 3em 0 0;
+  top: -3em;
+}
+.cartes section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: space-between;
+  gap: 1em 2em;
+  padding: 2em 1em;
+}
+.cartes h2 {
+  flex: 80%;
+  align-self: center;
+  padding: 0;
+}
+.cartes h3 {
+  flex: 100%;
+}
+.cartes i {
+  flex: 10%;
+  align-self: center;
+}
+.cartes label {
+  display: flex;
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
+}
+.cartes label span {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+}
+.cartes label span ins {
+  width: 100%;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.1em;
+}
+.cartes label span em {
+  font-size: 0.95em;
+  font-style: normal;
+  font-weight: 400;
+}
+.cartes label b {
+  align-self: end;
+}
 footer {
   background-color: #353535;
   color: #fff;
