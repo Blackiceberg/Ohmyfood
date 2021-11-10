@@ -248,19 +248,12 @@ main{
     input[type='checkbox']{ 
         z-index: -9999;
         position: absolute;
-        &:hover label::before{
-            display:block;
-            width:22px;
-            height:10px;        
-            z-index: 1000;
-            left: 50%;
-            position: absolute;
-            top: 50%;
-        }
-        &:focus:checked + label::after{
+
+
+        &:focus:not(:checked) + label::after{
             content: "";
             height: 83px;
-            width: 51%;
+            width: 100px;
             z-index: 10;
             background: url('../img/noun_Check.svg'), #99E2CF;
             background-repeat: no-repeat;
@@ -271,6 +264,21 @@ main{
             background-position: center;
             background-size: 30px;
         }
+        &:hover:not(:checked) + label::after{
+            content: "";
+            height: 83px;
+            width: 100px;
+            z-index: 10;
+            background: url('../img/noun_Check.svg'), #99E2CF;
+            background-repeat: no-repeat;
+            border-radius: 0 15px 15px 0;
+            left: 32px;
+            position: relative;
+            top: 0;
+            background-position: center;
+            background-size: 30px;
+        }
+
         &:checked + label >span:hover{
             width: 60%;
             
@@ -285,6 +293,8 @@ main{
         width: 100%;
         gap: 1em;
         padding: 0 2em 0 0;
+        cursor: pointer;
+
 
         span{
             display: flex;
