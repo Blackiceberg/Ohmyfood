@@ -2,6 +2,7 @@
 @import "./base/normalize";
 @import "./base/typography";
 @import "./utiles/variables";
+@import "./utiles/animations";
 
 
 
@@ -221,6 +222,23 @@ main{
 ////////////                CARTES                ///////////
 ////////////////////////////////////////////////////////////
 
+.check{
+    width: 0;
+    opacity: 0;
+    background-color: #99E2CF;
+    color: white;
+    transition: width 0.4s;
+    position: relative;
+    border-radius: 0 15px 15px 0;
+    i{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.4s;
+        font-size: 2em;
+    }
+}
 .cartes {
     background:$couleur-gris01;
     position: relative;
@@ -245,45 +263,24 @@ main{
         flex: 10%;
         align-self: center;
     }
+    input[type='checkbox']:checked + label > .check{
+        width: 100px;
+        flex: none;
+        opacity: 1;
+        i{
+            -webkit-animation: rotation 300ms linear 1;
+            transform-origin:center;
+        }
+    }
+    input[type='checkbox']:checked + label > span{
+        width: 50%;
+    }
     input[type='checkbox']{ 
         z-index: -9999;
         position: absolute;
 
-
-        &:focus:not(:checked) + label::after{
-            content: "";
-            height: 83px;
-            width: 100px;
-            z-index: 10;
-            background: url('../img/noun_Check.svg'), #99E2CF;
-            background-repeat: no-repeat;
-            border-radius: 0 15px 15px 0;
-            left: 32px;
-            position: relative;
-            top: 0;
-            background-position: center;
-            background-size: 30px;
-        }
-        &:hover:not(:checked) + label::after{
-            content: "";
-            height: 83px;
-            width: 100px;
-            z-index: 10;
-            background: url('../img/noun_Check.svg'), #99E2CF;
-            background-repeat: no-repeat;
-            border-radius: 0 15px 15px 0;
-            left: 32px;
-            position: relative;
-            top: 0;
-            background-position: center;
-            background-size: 30px;
         }
 
-        &:checked + label >span:hover{
-            width: 60%;
-            
-        }
- 
      }
     label{
         display: flex;
@@ -292,8 +289,8 @@ main{
         box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
         width: 100%;
         gap: 1em;
-        padding: 0 2em 0 0;
         cursor: pointer;
+        justify-content: space-between;
 
 
         span{
@@ -302,12 +299,14 @@ main{
             gap: .8em;
             white-space: nowrap;
             width: 100%;
+            transition: width 0.4s;
+
 
             ins{
                 width: 100%;
                 text-decoration: none;
                 font-weight: 800;
-                font-size: 1.1em;
+                font-size: 1.2em;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 padding: 1em 0 0 1em;
@@ -316,15 +315,12 @@ main{
 
             }
             em{
-                font-size: .95em;
+                font-size: 1.1em;
                 font-style: normal;
                 font-weight: 400;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 padding: 0 0 1em 1em;
-
-
-
 
             }
         }
@@ -336,7 +332,7 @@ main{
         }
     }
 
-        }
+    
 
         //////////////////////////////////////////////////////////////
         ////////////                FOOTER                ///////////

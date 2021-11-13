@@ -1,0 +1,17 @@
+
+//////////////////////////////////////////////////////////////
+////////////             ANIMATION                ///////////
+////////////////////////////////////////////////////////////
+
+@-webkit-keyframes rotation {
+    from{
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+
+    }
+    to{
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+

@@ -349,6 +349,14 @@ template {
   display: none;
 }
 
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 html {
   font-family: "Roboto", sans-serif;
 }
@@ -521,6 +529,24 @@ main h2 {
   font-size: 30px;
 }
 
+.check {
+  width: 0;
+  opacity: 0;
+  background-color: #99E2CF;
+  color: white;
+  transition: width 0.4s;
+  position: relative;
+  border-radius: 0 15px 15px 0;
+}
+.check i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.4s;
+  font-size: 2em;
+}
+
 .cartes {
   background: #f6f6f6;
   position: relative;
@@ -546,76 +572,59 @@ main h2 {
   flex: 10%;
   align-self: center;
 }
+.cartes input[type=checkbox]:checked + label > .check {
+  width: 100px;
+  flex: none;
+  opacity: 1;
+}
+.cartes input[type=checkbox]:checked + label > .check i {
+  -webkit-animation: rotation 300ms linear 1;
+  transform-origin: center;
+}
+.cartes input[type=checkbox]:checked + label > span {
+  width: 50%;
+}
 .cartes input[type=checkbox] {
   z-index: -9999;
   position: absolute;
 }
-.cartes input[type=checkbox]:focus:not(:checked) + label::after {
-  content: "";
-  height: 83px;
-  width: 100px;
-  z-index: 10;
-  background: url("../img/noun_Check.svg"), #99E2CF;
-  background-repeat: no-repeat;
-  border-radius: 0 15px 15px 0;
-  left: 32px;
-  position: relative;
-  top: 0;
-  background-position: center;
-  background-size: 30px;
-}
-.cartes input[type=checkbox]:hover:not(:checked) + label::after {
-  content: "";
-  height: 83px;
-  width: 100px;
-  z-index: 10;
-  background: url("../img/noun_Check.svg"), #99E2CF;
-  background-repeat: no-repeat;
-  border-radius: 0 15px 15px 0;
-  left: 32px;
-  position: relative;
-  top: 0;
-  background-position: center;
-  background-size: 30px;
-}
-.cartes input[type=checkbox]:checked + label > span:hover {
-  width: 60%;
-}
-.cartes label {
+
+label {
   display: flex;
   background-color: #fff;
   border-radius: 1em;
   box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
   width: 100%;
   gap: 1em;
-  padding: 0 2em 0 0;
   cursor: pointer;
+  justify-content: space-between;
 }
-.cartes label span {
+label span {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8em;
   white-space: nowrap;
   width: 100%;
+  transition: width 0.4s;
 }
-.cartes label span ins {
+label span ins {
   width: 100%;
   text-decoration: none;
   font-weight: 800;
-  font-size: 1.1em;
+  font-size: 1.2em;
   text-overflow: ellipsis;
   overflow: hidden;
   padding: 1em 0 0 1em;
 }
-.cartes label span em {
-  font-size: 0.95em;
+label span em {
+  font-size: 1.1em;
   font-style: normal;
   font-weight: 400;
   text-overflow: ellipsis;
   overflow: hidden;
   padding: 0 0 1em 1em;
 }
-.cartes label b {
+label b {
   align-self: end;
   padding: 0 0 1em 0;
 }
