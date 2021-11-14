@@ -434,7 +434,7 @@ header button {
 }
 
 main h2 {
-  padding: 2em 1em 1em;
+  padding: 2em 0em 0em;
 }
 
 .fonctionnement {
@@ -486,45 +486,45 @@ main h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1em;
-  padding-bottom: 3em;
+  gap: 1.2em;
+  padding: 0 1.2em;
 }
 .restaurants h2 {
   align-self: flex-start;
 }
-.restaurants button {
-  border: none;
-}
-.restaurants button a {
+.restaurants a {
   display: flex;
   flex-flow: wrap;
-  width: 335px;
+  width: 100%;
   text-decoration: none;
   color: #101010;
   background-color: #fff;
-  border-radius: 25px;
+  border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
 }
-.restaurants button a img {
-  border-radius: 25px 25px 0 0;
+.restaurants a:last-child {
+  margin-bottom: 4em;
+}
+.restaurants a img {
+  border-radius: 15px 15px 0 0;
   height: 174px;
   object-fit: cover;
   width: 100%;
 }
-.restaurants button a span {
+.restaurants a span {
   font-weight: 500;
   text-align: left;
   padding: 1.5em 1.5em 1em 1em;
   line-height: 1.5em;
 }
-.restaurants button a span b {
+.restaurants a span b {
   font-weight: 100;
 }
-.restaurants button a span:nth-child(3) {
+.restaurants a span:nth-child(3) {
   text-align: end;
   flex: 1;
 }
-.restaurants button a span:nth-child(3) i {
+.restaurants a span:nth-child(3) i {
   background-clip: border-box;
   font-size: 30px;
 }
@@ -534,7 +534,7 @@ main h2 {
   opacity: 0;
   background-color: #99E2CF;
   color: white;
-  transition: width 0.4s;
+  transition: width 0.3s;
   position: relative;
   border-radius: 0 15px 15px 0;
 }
@@ -543,7 +543,7 @@ main h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: transform 0.4s;
+  transition: transform 0.3s;
   font-size: 2em;
 }
 
