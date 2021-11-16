@@ -12,3 +12,13 @@ $couleur-gris02: #eaeaea;
 $couleur-gris03: #7e7e7e;
 
 $couleur-white : #fff;
+
+//////////////////////////////////////////////////////////////
+////////////                Dégrader              ///////////
+////////////////////////////////////////////////////////////
+
+  #gradient-vertical {
+    --color-stop-1: #9356DC;
+    --color-stop-2: #FF79DA;
+    --color-stop-3: pink;
+  }

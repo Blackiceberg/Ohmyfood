@@ -116,6 +116,10 @@ main{
 
 .fonctionnement{
     margin-bottom: 4.250em;
+    h2{
+        padding: 2em 1em 1em;
+    }
+
     ul{
         display: flex;
         flex-direction: column;
@@ -130,7 +134,7 @@ main{
             display: flex;
             justify-content: space-around;
             font-size: 16px;
-            border-radius: 25px;
+            border-radius: 20px;
             padding: 25px 10%;
             width: 90%;
             border: none;
@@ -167,6 +171,7 @@ main{
 ////////////              RESTAURANTS             ///////////
 ////////////////////////////////////////////////////////////
 
+
 .restaurants{
     background-color: $couleur-gris01;
     display: flex;
@@ -186,9 +191,9 @@ main{
         background-color: $couleur-white;
         border-radius: 15px;
         box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
-        &:last-child{
-            margin-bottom: 4em;
-        }
+        position: relative;
+        z-index: 2;
+
         img{
             border-radius: 15px 15px 0 0;
             height: 174px;
@@ -200,23 +205,116 @@ main{
             text-align: left;
             padding:  1.5em 1.5em 1em 1em;
             line-height: 1.5em;
+
             b{
                 font-weight: 100;
             }
             &:nth-child(3){
-                text-align: end;
                 flex: 1;
-                i{
-                    background-clip: border-box;
-                    font-size: 30px;
-                }
             }
         }
-      
+        
     }
 
 }
+.carte{
+    position: relative;
+    width: 100%;
+    &:last-child{
+        margin-bottom: 4em;
+    }
+    span{
+        &:first-child{
+            position: absolute;
+            background-color: $couleur-tertiaire;
+            width: 70px;
+            height: 21px;
+            font-size: 12px;
+            text-align: center;
+            padding: 0 1em;
+            color: darken($couleur-tertiaire, 35%);
+            border-radius: 2px;
+            top: 1em;
+            right: 1em;
+            line-height: 1.8em;
+        }
+    }
+}
+/*{
+    background-color: none;
+}*/
+.like {
+    fill: transparent;
+    stroke-width: 3;
+    stroke: #353535;
+    top: 13em;
+    right: 0em;
+    z-index: 1000;
+    background: none;
+    border: none;
+    position:absolute;
+     svg{
+            right:0;
+            height: 2em;
+            top: 2em;
+            width: 4em;
 
+
+    }
+}
+.carte input[type='checkbox']{ 
+    z-index: -9999;
+    position: absolute;
+
+    }
+
+    input [type='checkbox']:checked, label svg:hover { 
+        animation: animate-heart 2s linear forwards;
+
+    }
+
+   
+@keyframes animate-heart {
+    0%{
+        stroke-dashoffset: 0;
+        stroke:rgb(0 0 0 / 80%)
+
+    }
+    40%{
+        stroke:rgb(0 0 0 / 25%);
+
+    }
+    50%{
+        fill: transparent;
+        stroke:rgb(0 0 0 / 5%)
+
+    }
+    65%{
+        fill: url(#gradient-vertical);
+        fill-opacity:0.2;
+        stroke:rgb(0 0 0 / 1%)
+
+    }
+    80%{
+        fill: url(#gradient-vertical);
+        fill-opacity:0.5;
+        stroke:rgb(0 0 0 / 0%)
+
+    }
+    90%{
+        fill: transparent;
+        fill: url(#gradient-vertical);
+        fill-opacity:0.7;
+        stroke:rgb(0 0 0 / 0%)
+
+    }
+    100%{
+     
+    fill: url(#gradient-vertical);
+    stroke:rgb(0 0 0 / 0%)
+
+    }
+}
 //////////////////////////////////////////////////////////////
 ////////////                CARTES                ///////////
 ////////////////////////////////////////////////////////////
@@ -229,6 +327,7 @@ main{
     transition: width 0.3s;
     position: relative;
     border-radius: 0 15px 15px 0;
+    
     i{
         position: absolute;
         top:50%;
@@ -281,7 +380,7 @@ main{
         }
 
      }
-    label{
+    .btnplats + label{
         display: flex;
         background-color: $couleur-white;
         border-radius: 1em;
@@ -297,7 +396,6 @@ main{
             flex-wrap: wrap;
             gap: .8em;
             white-space: nowrap;
-            width: 100%;
             transition: width 0.4s;
 
 

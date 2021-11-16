@@ -349,6 +349,12 @@ template {
   display: none;
 }
 
+#gradient-vertical {
+  --color-stop-1: #9356DC;
+  --color-stop-2: #FF79DA;
+  --color-stop-3: pink;
+}
+
 @-webkit-keyframes rotation {
   from {
     -webkit-transform: translate(-50%, -50%) rotate(0deg);
@@ -440,6 +446,9 @@ main h2 {
 .fonctionnement {
   margin-bottom: 4.25em;
 }
+.fonctionnement h2 {
+  padding: 2em 1em 1em;
+}
 .fonctionnement ul {
   display: flex;
   flex-direction: column;
@@ -454,7 +463,7 @@ main h2 {
   display: flex;
   justify-content: space-around;
   font-size: 16px;
-  border-radius: 25px;
+  border-radius: 20px;
   padding: 25px 10%;
   width: 90%;
   border: none;
@@ -501,9 +510,8 @@ main h2 {
   background-color: #fff;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
-}
-.restaurants a:last-child {
-  margin-bottom: 4em;
+  position: relative;
+  z-index: 2;
 }
 .restaurants a img {
   border-radius: 15px 15px 0 0;
@@ -521,14 +529,94 @@ main h2 {
   font-weight: 100;
 }
 .restaurants a span:nth-child(3) {
-  text-align: end;
   flex: 1;
 }
-.restaurants a span:nth-child(3) i {
-  background-clip: border-box;
-  font-size: 30px;
+
+.carte {
+  position: relative;
+  width: 100%;
+}
+.carte:last-child {
+  margin-bottom: 4em;
+}
+.carte span:first-child {
+  position: absolute;
+  background-color: #99E2D0;
+  width: 70px;
+  height: 21px;
+  font-size: 12px;
+  text-align: center;
+  padding: 0 1em;
+  color: #2c9c81;
+  border-radius: 2px;
+  top: 1em;
+  right: 1em;
+  line-height: 1.8em;
 }
 
+/*{
+    background-color: none;
+}*/
+.like {
+  fill: transparent;
+  stroke-width: 3;
+  stroke: #353535;
+  top: 13em;
+  right: 0em;
+  z-index: 1000;
+  background: none;
+  border: none;
+  position: absolute;
+}
+.like svg {
+  right: 0;
+  height: 2em;
+  top: 2em;
+  width: 4em;
+}
+
+.carte input[type=checkbox] {
+  z-index: -9999;
+  position: absolute;
+}
+
+input [type=checkbox]:checked, label svg:hover {
+  animation: animate-heart 2s linear forwards;
+}
+
+@keyframes animate-heart {
+  0% {
+    stroke-dashoffset: 0;
+    stroke: rgba(0, 0, 0, 0.8);
+  }
+  40% {
+    stroke: rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    fill: transparent;
+    stroke: rgba(0, 0, 0, 0.05);
+  }
+  65% {
+    fill: url(#gradient-vertical);
+    fill-opacity: 0.2;
+    stroke: rgba(0, 0, 0, 0.01);
+  }
+  80% {
+    fill: url(#gradient-vertical);
+    fill-opacity: 0.5;
+    stroke: rgba(0, 0, 0, 0);
+  }
+  90% {
+    fill: transparent;
+    fill: url(#gradient-vertical);
+    fill-opacity: 0.7;
+    stroke: rgba(0, 0, 0, 0);
+  }
+  100% {
+    fill: url(#gradient-vertical);
+    stroke: rgba(0, 0, 0, 0);
+  }
+}
 .check {
   width: 0;
   opacity: 0;
@@ -589,7 +677,7 @@ main h2 {
   position: absolute;
 }
 
-label {
+.btnplats + label {
   display: flex;
   background-color: #fff;
   border-radius: 1em;
@@ -599,15 +687,14 @@ label {
   cursor: pointer;
   justify-content: space-between;
 }
-label span {
+.btnplats + label span {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8em;
   white-space: nowrap;
-  width: 100%;
   transition: width 0.4s;
 }
-label span ins {
+.btnplats + label span ins {
   width: 100%;
   text-decoration: none;
   font-weight: 800;
@@ -616,7 +703,7 @@ label span ins {
   overflow: hidden;
   padding: 1em 0 0 1em;
 }
-label span em {
+.btnplats + label span em {
   font-size: 1.1em;
   font-style: normal;
   font-weight: 400;
@@ -624,7 +711,7 @@ label span em {
   overflow: hidden;
   padding: 0 0 1em 1em;
 }
-label b {
+.btnplats + label b {
   align-self: end;
   padding: 0 0 1em 0;
 }
