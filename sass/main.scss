@@ -269,7 +269,7 @@ main{
     }
 
     input [type='checkbox']:checked, label svg:hover { 
-        animation: animate-heart 2s linear forwards;
+        animation: animate-heart 0.4s linear forwards;
 
     }
 
@@ -318,7 +318,11 @@ main{
 //////////////////////////////////////////////////////////////
 ////////////                CARTES                ///////////
 ////////////////////////////////////////////////////////////
-
+.descriptions-plats{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
 .check{
     width: 0;
     opacity: 0;
@@ -361,7 +365,7 @@ main{
         flex: 10%;
         align-self: center;
     }
-    input[type='checkbox']:checked + label > .check{
+    label:hover > .check{
         width: 100px;
         flex: none;
         opacity: 1;
@@ -370,9 +374,10 @@ main{
             transform-origin:center;
         }
     }
-    input[type='checkbox']:checked + label > span{
+    /*input[type='checkbox']:checked + label > span{
         width: 50%;
-    }
+    }*/
+
     input[type='checkbox']{ 
         z-index: -9999;
         position: absolute;
@@ -381,14 +386,14 @@ main{
 
      }
     .btnplats + label{
-        display: flex;
         background-color: $couleur-white;
         border-radius: 1em;
         box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
         width: 100%;
         gap: 1em;
         cursor: pointer;
-        justify-content: space-between;
+        overflow: hidden;
+        display: flex;
 
 
         span{

@@ -581,7 +581,7 @@ main h2 {
 }
 
 input [type=checkbox]:checked, label svg:hover {
-  animation: animate-heart 2s linear forwards;
+  animation: animate-heart 0.4s linear forwards;
 }
 
 @keyframes animate-heart {
@@ -617,6 +617,12 @@ input [type=checkbox]:checked, label svg:hover {
     stroke: rgba(0, 0, 0, 0);
   }
 }
+.descriptions-plats {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
 .check {
   width: 0;
   opacity: 0;
@@ -640,6 +646,9 @@ input [type=checkbox]:checked, label svg:hover {
   position: relative;
   border-radius: 3em 3em 0 0;
   top: -3em;
+  /*input[type='checkbox']:checked + label > span{
+      width: 50%;
+  }*/
 }
 .cartes section {
   display: flex;
@@ -660,17 +669,14 @@ input [type=checkbox]:checked, label svg:hover {
   flex: 10%;
   align-self: center;
 }
-.cartes input[type=checkbox]:checked + label > .check {
+.cartes label:hover > .check {
   width: 100px;
   flex: none;
   opacity: 1;
 }
-.cartes input[type=checkbox]:checked + label > .check i {
+.cartes label:hover > .check i {
   -webkit-animation: rotation 300ms linear 1;
   transform-origin: center;
-}
-.cartes input[type=checkbox]:checked + label > span {
-  width: 50%;
 }
 .cartes input[type=checkbox] {
   z-index: -9999;
@@ -678,14 +684,14 @@ input [type=checkbox]:checked, label svg:hover {
 }
 
 .btnplats + label {
-  display: flex;
   background-color: #fff;
   border-radius: 1em;
   box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
   width: 100%;
   gap: 1em;
   cursor: pointer;
-  justify-content: space-between;
+  overflow: hidden;
+  display: flex;
 }
 .btnplats + label span {
   display: flex;
