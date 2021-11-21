@@ -126,13 +126,12 @@ main{
         gap: 20px;
         li{
             display: flex;
-            justify-content: center;
             position: relative;
             
         }
         button{
             display: flex;
-            justify-content: space-around;
+            gap: 1.5em;
             font-size: 16px;
             border-radius: 20px;
             padding: 25px 10%;
@@ -156,13 +155,16 @@ main{
         span{
             background-color: $couleur-primaire;
             font-size: 12px;
-            border-radius: 50%;
-            padding: 5px 8px;
+            border-radius: 100%;
+            padding: 2.5%;
             color: $couleur-white;
             font-weight: 300;
-            left: 4%;
-            top:30%;
-            position: absolute;
+            align-items: center;
+            display: flex;
+            height: 29px;
+            align-self: center;
+            position: relative;
+            left: 15px;
         }
     }
 }
@@ -262,6 +264,9 @@ main{
 
     }
 }
+.love{
+    top:2em;
+}
 .carte input[type='checkbox']{ 
     z-index: -9999;
     position: absolute;
@@ -270,6 +275,9 @@ main{
 
     input [type='checkbox']:checked, label svg:hover { 
         animation: animate-heart 0.4s linear forwards;
+        span{
+            width: 13em;
+        }
 
     }
 
@@ -322,6 +330,10 @@ main{
     display: flex;
     justify-content: space-between;
     flex: 1;
+    span:hover{
+        width: 13em;
+        transition: transform 0.3s;
+    }
 }
 .check{
     width: 0;
@@ -412,9 +424,6 @@ main{
                 text-overflow: ellipsis;
                 overflow: hidden;
                 padding: 1em 0 0 1em;
-
-
-
             }
             em{
                 font-size: 1.1em;
@@ -423,14 +432,11 @@ main{
                 text-overflow: ellipsis;
                 overflow: hidden;
                 padding: 0 0 1em 1em;
-
             }
         }
         b{
             align-self: end;
             padding: 0 0 1em 0;
-
-
         }
     }
 
