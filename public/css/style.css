@@ -456,12 +456,11 @@ main h2 {
 }
 .fonctionnement ul li {
   display: flex;
-  justify-content: center;
   position: relative;
 }
 .fonctionnement ul button {
   display: flex;
-  justify-content: space-around;
+  gap: 1.5em;
   font-size: 16px;
   border-radius: 20px;
   padding: 25px 10%;
@@ -481,13 +480,16 @@ main h2 {
 .fonctionnement ul span {
   background-color: #9356DC;
   font-size: 12px;
-  border-radius: 50%;
-  padding: 5px 8px;
+  border-radius: 100%;
+  padding: 2.5%;
   color: #fff;
   font-weight: 300;
-  left: 4%;
-  top: 30%;
-  position: absolute;
+  align-items: center;
+  display: flex;
+  height: 29px;
+  align-self: center;
+  position: relative;
+  left: 15px;
 }
 
 .restaurants {
@@ -575,6 +577,10 @@ main h2 {
   width: 4em;
 }
 
+.love {
+  top: 2em;
+}
+
 .carte input[type=checkbox] {
   z-index: -9999;
   position: absolute;
@@ -582,6 +588,9 @@ main h2 {
 
 input [type=checkbox]:checked, label svg:hover {
   animation: animate-heart 0.4s linear forwards;
+}
+input [type=checkbox]:checked span, label svg:hover span {
+  width: 13em;
 }
 
 @keyframes animate-heart {
@@ -621,6 +630,10 @@ input [type=checkbox]:checked, label svg:hover {
   display: flex;
   justify-content: space-between;
   flex: 1;
+}
+.descriptions-plats span:hover {
+  width: 13em;
+  transition: transform 0.3s;
 }
 
 .check {
