@@ -462,6 +462,9 @@ main h2 {
   display: flex;
   position: relative;
 }
+.fonctionnement ul li button em {
+  font-style: normal;
+}
 .fonctionnement ul button {
   display: flex;
   gap: 1.5em;
@@ -800,6 +803,71 @@ footer a {
 }
 footer ul {
   list-style: none;
+}
+
+/*-----------------------Tablette----------------------*/
+@media (min-width: 768px) {
+  .fonctionnement {
+    margin-bottom: 2.25em;
+  }
+  .fonctionnement h2 {
+    padding: 1em;
+  }
+  .fonctionnement ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5em;
+  }
+  .fonctionnement ul button {
+    padding: 25px 10%;
+  }
+  .fonctionnement ul span {
+    padding: 5%;
+  }
+  .fonctionnement ul i {
+    align-self: center;
+    padding-left: 1em;
+  }
+  .fonctionnement ul em {
+    text-align: left;
+  }
+
+  .restaurants {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .restaurants .carte {
+    width: 48%;
+  }
+  .restaurants .carte:nth-child(4) {
+    margin-bottom: 4em;
+  }
+  .restaurants h2 {
+    padding: 1em 0 1em;
+    flex: 100%;
+  }
+}
+.cartes h3 {
+  flex: 100%;
+}
+
+/*-----------------------Desktop----------------------*/
+@media (min-width: 992px) {
+  .fonctionnement ul button {
+    width: 30vh;
+  }
+
+  .restaurants {
+    justify-content: center;
+  }
+}
+@media (min-width: 1024px) {
+  .fonctionnement ul {
+    justify-content: center;
+  }
+  .fonctionnement ul button {
+    width: 20em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

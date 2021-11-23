@@ -130,7 +130,11 @@ main{
         li{
             display: flex;
             position: relative;
-            
+            button{
+                em{
+                    font-style: normal;  
+                }
+            }
         }
         button{
             display: flex;
@@ -516,3 +520,78 @@ main{
                 list-style: none;
             }
         }
+
+//////////////////////////////////////////////////////////////
+////////////               RESPONSIVE             ///////////
+////////////////////////////////////////////////////////////
+
+
+/*-----------------------Tablette----------------------*/
+@media(min-width:768px){
+    
+.fonctionnement{
+    margin-bottom: 2.25em;
+    h2{
+        padding: 1em;
+    }
+     ul{
+        flex-direction: row;
+        justify-content: center;
+
+        gap: 1.5em;
+        button{
+            padding: 25px 10%;
+        }
+        span{
+         padding: 5%;   
+        }
+        i{
+            align-self: center;
+            padding-left: 1em;
+        }
+        em{
+            text-align: left;
+        }
+    }
+}
+   .restaurants{
+       flex-wrap: wrap;
+       flex-direction: row;
+       .carte{
+        width: 48%;
+        &:nth-child(4){
+           margin-bottom: 4em; 
+        }
+        }
+       h2{
+           padding: 1em 0 1em;
+           flex: 100%;
+       }
+   }
+}
+.cartes h3{
+    flex: 100%;
+}
+/*-----------------------Desktop----------------------*/
+
+
+@media(min-width:992px){
+    .fonctionnement ul{
+        button{
+            width: 30vh;
+        }
+    }
+    .restaurants{
+        justify-content: center;
+    }
+}
+
+
+    @media(min-width:1024px){
+        .fonctionnement ul{
+            justify-content: center;
+            button{
+                width: 20em;
+            }
+        }
+    }
