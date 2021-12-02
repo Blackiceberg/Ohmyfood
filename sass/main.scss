@@ -179,8 +179,70 @@ main{
 //////////////////////////////////////////////////////////////
 ////////////              RESTAURANTS             ///////////
 ////////////////////////////////////////////////////////////
+.carte{
+    position: relative;
+    span{
+        position: absolute;
+        background-color: #99E2D0;
+        width: 70px;
+        height: 21px;
+        font-size: 12px;
+        text-align: center;
+        padding: 0 1em;
+        color: #2c9c81;
+        border-radius: 2px;
+        top: 1em;
+        right: 1em;
+        line-height: 1.8em;
+        }
+    figure{
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+    color: $couleur-black;
+    background-color: $couleur-white;
+    border-radius: 15px;
+    box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
+        img{
+            border-radius: 15px 15px 0 0;
+            object-fit: cover;
+            width: 100%;
+            height: 13em;
+            }
+        figcaption{
+            display: flex;
+            position: relative;
+            flex: 10;
+            div{
+                font-weight: 500;
+                text-align: left;
+                padding: 1.5em 1.5em 1em 1em;
+                line-height: 1.5em; 
+                p{
+                    font-weight: 100;
+                } 
+                a{
+                    position: absolute;
+                    left: 80%;
+                    font-size: 1.5em;
+                    padding: 0.5em 1em;
+                    :hover i {
+                        opacity: 1;
+                        }
+                    &:nth-child(1){
+                        opacity: 0;
+                       
+                    }
+                   
+                }
+            }
+        }
+    }
+}
+/*
 
 
+*/
 .restaurants{
     background-color: $couleur-gris01;
     display: flex;
@@ -194,6 +256,9 @@ main{
     width: 100%;
     background-repeat: no-repeat;
     }
+//////////////////////////////////////////////////////////////
+////////////      RESTAURANTS - PAGE INTERIEUR    ///////////
+////////////////////////////////////////////////////////////
     &-la-palette-du-gout{
         background-image: url(../img/restaurants/La-palette-du-gout.jpg);
         background-position: center -1em;
@@ -217,39 +282,9 @@ main{
     h2{
         align-self: flex-start;
     }
-    a{
-        display: flex;
-        flex-flow: wrap;
-        width: 100%;
-        text-decoration: none;
-        color: $couleur-black;
-        background-color: $couleur-white;
-        border-radius: 15px;
-        box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
-        position: relative;
-        z-index: 2;
 
-        img{
-            border-radius: 15px 15px 0 0;
-            height: 174px;
-            object-fit: cover;
-            width: 100%;
-        }
-        span{
-            font-weight: 500;
-            text-align: left;
-            padding:  1.5em 1.5em 1em 1em;
-            line-height: 1.5em;
-
-            b{
-                font-weight: 100;
-            }
-            &:nth-child(3){
-                flex: 1;
-            }
-        }
         
-    }
+    
     &-header{
         img{
             height: 300px;
@@ -257,51 +292,8 @@ main{
             z-index: 0;
             width: 100%;
         }
+    
     }
-}
-.carte{
-    position: relative;
-    width: 100%;
-    &:last-child{
-        margin-bottom: 4em;
-    }
-    span{
-        &:first-child{
-            position: absolute;
-            background-color: $couleur-tertiaire;
-            width: 70px;
-            height: 21px;
-            font-size: 12px;
-            text-align: center;
-            padding: 0 1em;
-            color: darken($couleur-tertiaire, 35%);
-            border-radius: 2px;
-            top: 1em;
-            right: 1em;
-            line-height: 1.8em;
-        }
-    }
-}
-
-.like {
-    fill: transparent;
-    stroke-width: 3;
-    stroke: #353535;
-    top: 13em;
-    right: 0em;
-    z-index: 1000;
-    background: none;
-    border: none;
-    position:absolute;
-     svg{
-            right:0;
-            height: 2em;
-            top: 2em;
-            width: 4em;
-    }
-}
-.love{
-    top:2em;
 }
 .carte input[type='checkbox']{ 
     z-index: -9999;

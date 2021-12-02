@@ -499,6 +499,69 @@ main h2 {
   left: 15px;
 }
 
+.carte {
+  position: relative;
+}
+.carte span {
+  position: absolute;
+  background-color: #99E2D0;
+  width: 70px;
+  height: 21px;
+  font-size: 12px;
+  text-align: center;
+  padding: 0 1em;
+  color: #2c9c81;
+  border-radius: 2px;
+  top: 1em;
+  right: 1em;
+  line-height: 1.8em;
+}
+.carte figure {
+  display: flex;
+  flex-flow: wrap;
+  width: 100%;
+  color: #101010;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
+}
+.carte figure img {
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
+  width: 100%;
+  height: 13em;
+}
+.carte figure figcaption {
+  display: flex;
+  position: relative;
+  flex: 10;
+}
+.carte figure figcaption div {
+  font-weight: 500;
+  text-align: left;
+  padding: 1.5em 1.5em 1em 1em;
+  line-height: 1.5em;
+}
+.carte figure figcaption div p {
+  font-weight: 100;
+}
+.carte figure figcaption div a {
+  position: absolute;
+  left: 80%;
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+}
+.carte figure figcaption div a :hover i {
+  opacity: 1;
+}
+.carte figure figcaption div a:nth-child(1) {
+  opacity: 0;
+}
+
+/*
+
+
+*/
 .restaurants {
   background-color: #f6f6f6;
   display: flex;
@@ -535,85 +598,11 @@ main h2 {
 .restaurants h2 {
   align-self: flex-start;
 }
-.restaurants a {
-  display: flex;
-  flex-flow: wrap;
-  width: 100%;
-  text-decoration: none;
-  color: #101010;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
-  position: relative;
-  z-index: 2;
-}
-.restaurants a img {
-  border-radius: 15px 15px 0 0;
-  height: 174px;
-  object-fit: cover;
-  width: 100%;
-}
-.restaurants a span {
-  font-weight: 500;
-  text-align: left;
-  padding: 1.5em 1.5em 1em 1em;
-  line-height: 1.5em;
-}
-.restaurants a span b {
-  font-weight: 100;
-}
-.restaurants a span:nth-child(3) {
-  flex: 1;
-}
 .restaurants-header img {
   height: 300px;
   position: relative;
   z-index: 0;
   width: 100%;
-}
-
-.carte {
-  position: relative;
-  width: 100%;
-}
-.carte:last-child {
-  margin-bottom: 4em;
-}
-.carte span:first-child {
-  position: absolute;
-  background-color: #99E2D0;
-  width: 70px;
-  height: 21px;
-  font-size: 12px;
-  text-align: center;
-  padding: 0 1em;
-  color: #2c9c81;
-  border-radius: 2px;
-  top: 1em;
-  right: 1em;
-  line-height: 1.8em;
-}
-
-.like {
-  fill: transparent;
-  stroke-width: 3;
-  stroke: #353535;
-  top: 13em;
-  right: 0em;
-  z-index: 1000;
-  background: none;
-  border: none;
-  position: absolute;
-}
-.like svg {
-  right: 0;
-  height: 2em;
-  top: 2em;
-  width: 4em;
-}
-
-.love {
-  top: 2em;
 }
 
 .carte input[type=checkbox] {
