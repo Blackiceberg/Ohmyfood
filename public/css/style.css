@@ -499,8 +499,13 @@ main h2 {
   left: 15px;
 }
 
+.restaurants .carte:nth-child(5) {
+  margin-bottom: 5em;
+}
+
 .carte {
   position: relative;
+  width: 100%;
 }
 .carte span {
   position: absolute;
@@ -518,18 +523,22 @@ main h2 {
 }
 .carte figure {
   display: flex;
-  flex-flow: wrap;
+  flex-direction: column;
   width: 100%;
   color: #101010;
   background-color: #fff;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
 }
+.carte figure a {
+  display: flex;
+  text-decoration: none;
+}
 .carte figure img {
   border-radius: 15px 15px 0 0;
   object-fit: cover;
   width: 100%;
-  height: 13em;
+  height: auto;
 }
 .carte figure figcaption {
   display: flex;
@@ -547,21 +556,50 @@ main h2 {
 }
 .carte figure figcaption div a {
   position: absolute;
-  left: 80%;
-  font-size: 1.5em;
-  padding: 0.5em 1em;
-}
-.carte figure figcaption div a :hover i {
-  opacity: 1;
+  left: 85%;
+  font-size: 2em;
 }
 .carte figure figcaption div a:nth-child(1) {
   opacity: 0;
+  z-index: 100;
+  color: #f174da;
+}
+.carte figure figcaption div a:nth-child(1):hover {
+  opacity: 1;
+}
+.carte figure figcaption div a:nth-child(2) {
+  color: black;
+  font-size: 1.9em;
+  padding: 0.05em;
+}
+.carte-restaurant {
+  height: 20vh;
+  width: 100%;
+  background-size: cover;
+  border-radius: 15px 15px 0 0;
+  background-repeat: no-repeat;
 }
 
-/*
+.le-delice-des-sens {
+  background-image: url(../img/restaurants/Le-delice-des-sens.jpg);
+  background-position: 0px -60px;
+}
 
+.a-la-francaise {
+  background-image: url(../img/restaurants/A-la-francaise.jpg);
+  background-position: 0px -60px;
+}
 
-*/
+.la-palette-du-gout {
+  background-image: url(../img/restaurants/La-palette-du-gout.jpg);
+  background-position: center -55px;
+}
+
+.la-note-enchantee {
+  background-image: url(../img/restaurants/La-note-enchantee.jpg);
+  background-position: 0px -160px;
+}
+
 .restaurants {
   background-color: #f6f6f6;
   display: flex;
@@ -765,7 +803,7 @@ input [type=checkbox]:checked span, label svg:hover span {
   text-overflow: ellipsis;
   overflow: hidden;
   padding: 0 0 1em 1em;
-  width: 310px;
+  width: 270px;
 }
 .btnplats + label b {
   align-self: end;
@@ -829,7 +867,10 @@ footer ul {
     width: 48%;
   }
   .restaurants .carte:nth-child(4) {
-    margin-bottom: 4em;
+    margin-bottom: 5em;
+  }
+  .restaurants .carte:nth-child(5) {
+    margin-bottom: 5em;
   }
   .restaurants h2 {
     padding: 1em 0 1em;
@@ -857,6 +898,9 @@ footer ul {
   .fonctionnement ul button {
     width: 20em;
   }
+}
+.mb-5 {
+  margin-bottom: 5em;
 }
 
 /*# sourceMappingURL=style.css.map */
