@@ -595,26 +595,6 @@ main h2 {
   background-repeat: no-repeat;
 }
 
-.le-delice-des-sens {
-  background-image: url(../img/restaurants/Le-delice-des-sens.jpg);
-  background-position: 0px -60px;
-}
-
-.a-la-francaise {
-  background-image: url(../img/restaurants/A-la-francaise.jpg);
-  background-position: 0px -60px;
-}
-
-.la-palette-du-gout {
-  background-image: url(../img/restaurants/La-palette-du-gout.jpg);
-  background-position: center -55px;
-}
-
-.la-note-enchantee {
-  background-image: url(../img/restaurants/La-note-enchantee.jpg);
-  background-position: 0px -160px;
-}
-
 .restaurants {
   background-color: #f6f6f6;
   display: flex;
@@ -656,6 +636,24 @@ main h2 {
   position: relative;
   z-index: 0;
   width: 100%;
+}
+
+.like {
+  font-size: 2em;
+  flex: 0.15;
+}
+
+.cartes .menu {
+  margin: 0;
+  padding: 0;
+}
+.cartes .menu section {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.cartes .menu section h3 {
+  padding: 1.5em 0em 0em;
 }
 
 .carte input[type=checkbox] {
@@ -747,11 +745,11 @@ input [type=checkbox]:checked span, label svg:hover span {
   z-index: 10;
 }
 .cartes h2 {
-  flex: 80%;
+  flex: 70%;
   align-self: center;
   padding: 0;
   font-family: shrikhand;
-  font-size: 1.9em;
+  font-size: 1.7em;
 }
 .cartes h3 {
   font-weight: 300;
@@ -789,17 +787,21 @@ input [type=checkbox]:checked span, label svg:hover span {
   background-color: #fff;
   border-radius: 1em;
   box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
-  width: 100%;
+  width: 90vw;
   gap: 1em;
   cursor: pointer;
   overflow: hidden;
   display: flex;
+  height: 10vh;
 }
 .btnplats + label span {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8em;
   white-space: nowrap;
+  transition: width 0.4s;
+}
+.btnplats + label span :hover {
   transition: width 0.4s;
 }
 .btnplats + label span ins {
@@ -853,7 +855,8 @@ footer ul {
     margin-bottom: 2.25em;
   }
   .fonctionnement h2 {
-    padding: 1em;
+    padding: 1.5em;
+    text-align: center;
   }
   .fonctionnement ul {
     flex-direction: row;
@@ -871,6 +874,10 @@ footer ul {
     text-align: left;
   }
 
+  .cartes section {
+    justify-content: center;
+  }
+
   .restaurants {
     flex-wrap: wrap;
     flex-direction: row;
@@ -885,8 +892,13 @@ footer ul {
     margin-bottom: 5em;
   }
   .restaurants h2 {
-    padding: 1em 0 1em;
+    padding: 1.5em;
+    text-align: center;
     flex: 100%;
+  }
+
+  .like {
+    flex: 0.45;
   }
 }
 .cartes h3 {
@@ -909,6 +921,22 @@ footer ul {
   }
   .fonctionnement ul button {
     width: 20em;
+  }
+
+  .cartes .menu {
+    display: flex;
+    flex: 100%;
+  }
+  .cartes .menu section {
+    gap: 2em;
+    display: flex;
+    flex: 3;
+    align-content: flex-start;
+    margin: 0;
+    padding: 0 1em;
+  }
+  .cartes .btnplats + label {
+    width: 30vw;
   }
 
   .restaurants .carte {

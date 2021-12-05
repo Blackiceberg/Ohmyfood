@@ -18,20 +18,12 @@
     <main class="cartes">
         <section>
             <h2>La note enchantée</h2>
-            <input  id='love' type="checkbox"> 
-                <label class="like love" for='love'>
-                <svg viewBox="-2 0 150 56" fill="url(#my-cool-gradient)#447799;"  aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#symbol-id"></use>    
-                <path d="M31.7,6.1C35,2.7,39.1,1,43.9,1S52.7,2.7,56,6.1s4.9,7.5,4.9,12.5s-1.6,9-4.9,12.4L33.6,54c-0.7,0.7-1.5,1.1-2.5,1.1
-                    s-1.8-0.4-2.5-1.1L6,30.9c-3.3-3.4-4.9-7.5-4.9-12.5S2.7,9.4,6,6.1S13.3,1,18.2,1S27,2.7,30.3,6.1c0.3,0.3,0.6,0.6,0.8,0.8
-                    C31.3,6.5,31.6,6.2,31.7,6.1z"/>
-                        <linearGradient id="gradient-vertical" x2="0" y2="1">
-                        <stop offset="0%" stop-color="var(--color-stop-1)" />
-                        <stop offset="50%" stop-color="var(--color-stop-2)" />
-                        <stop offset="100%" stop-color="var(--color-stop-3)" />
-                        </linearGradient>
-                    </svg>
-                </label>
+            <div class="like">
+                <a href="#div"><i class="plein fas fa-heart "></i></a>
+                <a href="#figure"><i class="vide far fa-heart "></i></a>
+            </div>
+            <div class="menu">
+                <section>
             <h3><strong>Entr</strong>ées</h3>
               <input class="btnplats" id='plat01' type='checkbox' />  
             <label for='plat01'>
@@ -59,8 +51,8 @@
                     <i class="fas fa-check-circle rotation"></i>
                 </span>
             </label>
-            <input  class="btnplats" id='plat03' type='checkbox' />
-            <label for='plat03'>
+            <input  class="btnplats" id='plat011' type='checkbox' />
+            <label for='plat011'>
                 <div class="descriptions-plats">
                 <span>
                     <ins>Homard et espuma de potiron</ins>
@@ -72,8 +64,8 @@
                     <i class="fas fa-check-circle rotation"></i>
                 </span>
             </label>
-            <input  class="btnplats" id='plat03' type='checkbox' />
-            <label for='plat03'>
+            <input  class="btnplats" id='plat45' type='checkbox' />
+            <label for='plat45'>
                 <div class="descriptions-plats">
                 <span>
                     <ins>Foie gras de canard cuit entier</ins>
@@ -85,6 +77,8 @@
                     <i class="fas fa-check-circle rotation"></i>
                 </span>
             </label>
+        </section>
+        <section>
             <h3><strong> Plat</strong>s</h3>
             
             <input class="btnplats" id='plat04' type='checkbox' />
@@ -113,10 +107,6 @@
              <i class="fas fa-check-circle rotation"></i>
          </span>
      </label>
-            
-
-
-
   <input class="btnplats" id='plat06' type='checkbox' />
   <label for='plat06'>
       <div class="descriptions-plats">
@@ -130,6 +120,8 @@
       <i class="fas fa-check-circle rotation"></i>
   </span>
 </label>
+</section>
+<section>
 <h3><strong> Dess</strong>erts</h3>
 <input class="btnplats" id='plat07' type='checkbox' />
 <label for='plat07'>
@@ -156,8 +148,7 @@
     <span class="check">
         <i class="fas fa-check-circle rotation"></i>
     </span>
-</label>
-       
+</label>    
     <input class="btnplats" id='plat08' type='checkbox' />
     <label for='plat08'>
         <div class="descriptions-plats">
@@ -171,13 +162,13 @@
         <i class="fas fa-check-circle rotation"></i>
     </span>
 </label>
-  
+</section>
+</div>
     <button class="button restaurants-button">Commander</button>
-
         </section>
     </main>
     <footer>
-        <h1>ohmyfood</h1>
+        <h4>ohmyfood</h4>
         <ul>
             <li><a href="#"><i class="fas fa-utensils"></i> Proposer un restaurant</a></li>
             <li><a href="#"><i class="far fa-handshake"></i> Devenir partenaire</a></li>

@@ -184,6 +184,10 @@ main{
 .restaurants .carte:nth-child(5){
     margin-bottom: 5em;
 }
+
+//////////////////////////////////////////////////////////////
+////////////                   LIKE               ///////////
+////////////////////////////////////////////////////////////
 .vide{
     opacity: 1;
     color: black;
@@ -275,22 +279,7 @@ main{
         background-repeat: no-repeat;
     }
 }
-.le-delice-des-sens{
-    background-image: url(../img/restaurants/Le-delice-des-sens.jpg);
-    background-position: 0px -60px; 
-    }
-.a-la-francaise {
-    background-image: url(../img/restaurants/A-la-francaise.jpg);
-    background-position: 0px -60px; 
-    }
-.la-palette-du-gout{
-    background-image: url(../img/restaurants/La-palette-du-gout.jpg);
-    background-position: center -55px;
-    }
-.la-note-enchantee{
-    background-image: url(../img/restaurants/La-note-enchantee.jpg);
-    background-position: 0px -160px; 
-    }
+
 .restaurants{
     background-color: $couleur-gris01;
     display: flex;
@@ -343,7 +332,30 @@ main{
         }
     
     }
+
 }
+.like{
+    font-size: 2em;
+    flex:0.15;
+}
+
+.cartes{
+    .menu{
+        margin: 0;
+        padding: 0;
+        section{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            h3{
+                padding: 1.5em 0em 0em;            
+            }
+        }
+    }
+}
+
+
+
 .carte input[type='checkbox']{ 
     z-index: -9999;
     position: absolute;
@@ -445,11 +457,11 @@ main{
         z-index: 10;
     }
     h2{
-        flex: 80%;
+        flex: 70%;
         align-self: center;
         padding: 0;
         font-family: shrikhand;
-        font-size: 1.9em;
+        font-size: 1.7em;
         
     }
     h3{
@@ -492,11 +504,12 @@ main{
         background-color: $couleur-white;
         border-radius: 1em;
         box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
-        width: 100%;
+        width: 90vw;
         gap: 1em;
         cursor: pointer;
         overflow: hidden;
         display: flex;
+        height: 10vh;
 
 
         span{
@@ -505,7 +518,9 @@ main{
             gap: .8em;
             white-space: nowrap;
             transition: width 0.4s;
-
+            :hover{
+                transition: width 0.4s;
+            }
 
             ins{
                 width: 100%;
@@ -573,7 +588,8 @@ main{
 .fonctionnement{
     margin-bottom: 2.25em;
     h2{
-        padding: 1em;
+        padding: 1.5em;
+        text-align: center;
     }
      ul{
         flex-direction: row;
@@ -592,6 +608,9 @@ main{
         }
     }
 }
+    .cartes section{
+        justify-content: center;
+    }
    .restaurants{
        flex-wrap: wrap;
        flex-direction: row;
@@ -605,9 +624,14 @@ main{
          }
         }
        h2{
-           padding: 1em 0 1em;
+           padding: 1.5em;
+           text-align: center;
+
            flex: 100%;
        }
+   }
+   .like{
+    flex: 0.45;
    }
 }
 .cartes h3{
@@ -635,6 +659,24 @@ main{
                 width: 20em;
             }
         }
+    .cartes{
+            .menu{
+                display: flex;
+                flex: 100%;
+                section{
+                    gap: 2em;
+                    display: flex;
+                    flex: 3;
+                    align-content: flex-start;
+                    margin: 0;
+                    padding: 0 1em;
+                }
+            }
+        .btnplats + label {
+            width: 30vw;
+
+        }
+     }
         .restaurants{
             .carte{
                 width: 33%;
