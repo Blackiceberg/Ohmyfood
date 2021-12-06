@@ -350,12 +350,50 @@ template {
   display: none;
 }
 
-#gradient-vertical {
-  --color-stop-1: #9356DC;
-  --color-stop-2: #FF79DA;
-  --color-stop-3: pink;
+@keyframes big {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
-
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  70% {
+    transform: rotate(180deg) scale(0.9);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.1);
+  }
+}
+@keyframes loading {
+  0%, 70% {
+    opacity: 1;
+    z-index: 1000;
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: 0;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(1px);
+  }
+}
 @-webkit-keyframes rotation {
   from {
     -webkit-transform: translate(-50%, -50%) rotate(0deg);
@@ -374,11 +412,19 @@ html {
   align-self: center;
   font-weight: 300;
   font-size: 16px;
-  background: linear-gradient(130deg, #f174da 0%, #a066da 100%);
   border-radius: 25px;
   height: 50px;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px 1px;
+  transition: 0.6s;
+  background-size: 200%;
+  z-index: 1;
+  background-image: linear-gradient(to left, #ff7de7, #f174da, #a066da);
+}
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 5px 2px;
+  background-position: right;
+  font-size: 16.5px;
 }
 
 .header {
@@ -475,7 +521,8 @@ main h2 {
   padding: 25px 10%;
   width: 90%;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
+  transition: 0.6s;
+  box-shadow: rgba(0, 0, 0, 0.1) 5.5px 7.1px 21px -6px;
   background-color: #f6f6f6;
 }
 .fonctionnement ul button i {
@@ -483,6 +530,7 @@ main h2 {
 }
 .fonctionnement ul button:hover {
   background-color: #f5edff;
+  box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
 }
 .fonctionnement ul button:hover i {
   color: #9356DC;
@@ -534,6 +582,12 @@ main h2 {
 .carte {
   position: relative;
   width: 100%;
+  transition: box-shadow 0.6s;
+  display: block;
+  border-radius: 15px;
+}
+.carte:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 5.5px 7.1px 21px -6px;
 }
 .carte span {
   position: absolute;
@@ -556,7 +610,7 @@ main h2 {
   color: #101010;
   background-color: #fff;
   border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 5.5px 7.1px 21px -6px;
 }
 .carte figure a {
   display: flex;
@@ -608,22 +662,19 @@ main h2 {
   background-size: cover;
   width: 100%;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .restaurants-la-palette-du-gout {
   background-image: url(../img/restaurants/La-palette-du-gout.jpg);
-  background-position: center -1em;
 }
 .restaurants-la-note-enchantee {
   background-image: url(../img/restaurants/La-note-enchantee.jpg);
-  background-position: center -8em;
 }
 .restaurants-a-la-française {
   background-image: url(../img/restaurants/A-la-francaise.jpg);
-  background-position: center 0;
 }
 .restaurants-le-delice-des-sens {
   background-image: url(../img/restaurants/Le-delice-des-sens.jpg);
-  background-position: center -1em;
 }
 .restaurants-button {
   margin: 1em auto 2em;
@@ -705,6 +756,7 @@ input [type=checkbox]:checked span, label svg:hover span {
   display: flex;
   justify-content: space-between;
   flex: 1;
+  transition: width 0.4s;
 }
 .descriptions-plats span:hover {
   width: 13em;
@@ -724,7 +776,7 @@ input [type=checkbox]:checked span, label svg:hover span {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-70%, -50%);
   transition: transform 0.3s;
   font-size: 2em;
 }
@@ -743,6 +795,15 @@ input [type=checkbox]:checked span, label svg:hover span {
   margin: -2.7em 0 0;
   position: relative;
   z-index: 10;
+}
+.cartes section .menu section:nth-child(1) {
+  animation: fadein 1s;
+}
+.cartes section .menu section:nth-child(2) {
+  animation: fadein 5s;
+}
+.cartes section .menu section:nth-child(3) {
+  animation: fadein 8s;
 }
 .cartes h2 {
   flex: 70%;
@@ -793,13 +854,13 @@ input [type=checkbox]:checked span, label svg:hover span {
   overflow: hidden;
   display: flex;
   height: 10vh;
+  animation: fadein 2s;
 }
 .btnplats + label span {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8em;
   white-space: nowrap;
-  transition: width 0.4s;
 }
 .btnplats + label span :hover {
   transition: width 0.4s;
@@ -874,8 +935,10 @@ footer ul {
     text-align: left;
   }
 
-  .cartes section {
+  .cartes .menu section {
     justify-content: center;
+    width: 80%;
+    margin: 0 auto;
   }
 
   .restaurants {
@@ -915,7 +978,7 @@ footer ul {
     justify-content: center;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1064px) {
   .fonctionnement ul {
     justify-content: center;
   }
@@ -933,7 +996,7 @@ footer ul {
     flex: 3;
     align-content: flex-start;
     margin: 0;
-    padding: 0 1em;
+    padding: 0;
   }
   .cartes .btnplats + label {
     width: 30vw;
@@ -942,12 +1005,45 @@ footer ul {
   .restaurants .carte {
     width: 33%;
   }
+
+  .like {
+    flex: 0.15;
+  }
 }
 .cercle {
   width: 30px;
   height: 30px;
   border-radius: 20px;
   background: #9356DC;
+}
+
+.intro {
+  background: #99E2D0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: loading 3s linear;
+  opacity: 0;
+}
+.intro p {
+  font-size: 3em;
+  text-align: center;
+  font-family: "Shrikhand", cursive;
+  margin: 15vh auto;
+  position: relative;
+  color: #32b091;
+  animation: big 1.5s infinite;
+}
+
+.chargement {
+  border: 10px solid rgba(0, 0, 255, 0);
+  border-left: 5px solid #32b091;
+  border-radius: 150%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1.5s infinite;
+  margin: 20vh auto;
+  position: relative;
 }
 
 /*# sourceMappingURL=style.css.map */

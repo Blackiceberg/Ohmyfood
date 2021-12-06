@@ -13,12 +13,6 @@ $couleur-gris03: #7e7e7e;
 
 $couleur-white : #fff;
 
-//////////////////////////////////////////////////////////////
-////////////                Dégrader              ///////////
-////////////////////////////////////////////////////////////
 
-  #gradient-vertical {
-    --color-stop-1: #9356DC;
-    --color-stop-2: #FF79DA;
-    --color-stop-3: pink;
-  }
+  $button: linear-gradient(to left, rgba(241,116,218,1) 0%, rgba(160,102,218,1) 100%);
+  $buttonR: linear-gradient(to right, rgba(241,116,218,1) 0%, rgba(160,102,218,1) 100%);

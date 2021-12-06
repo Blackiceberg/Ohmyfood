@@ -3,6 +3,67 @@
 ////////////             ANIMATION                ///////////
 ////////////////////////////////////////////////////////////
 
+//loding page
+
+@keyframes big{
+    0%{
+        transform: scale(1) ;
+
+    }
+    70%{
+        transform: scale(.9);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+@keyframes spin{
+
+    0%{
+        transform: rotate(0deg) scale(1) ;
+
+    }
+    70%{
+        transform: rotate(180deg) scale(.9);
+    }
+    100%{
+        transform: rotate(360deg) scale(1.1);
+    }
+}
+
+@keyframes loading {
+    0%,70%{
+        opacity: 1;
+        z-index: 1000;
+        display: block;
+
+    }
+    100%{
+        opacity: 0;
+        display: none;
+        z-index: 0;
+    }
+
+} 
+//////////////////////////////////////////////////////////////
+////////////            PAGE INTERIEUR            ///////////
+////////////////////////////////////////////////////////////
+
+
+// arriver des vignettes
+@keyframes fadein {
+    from {
+        opacity: 0;
+       transform:translateY(-10px);
+
+    }
+    to {
+        opacity: 1;
+        transform:translateY(1px);
+    }
+}
+// valider
+
 @-webkit-keyframes rotation {
     from{
         -webkit-transform: translate(-50%, -50%) rotate(0deg);
@@ -12,6 +73,3 @@
         -webkit-transform: translate(-50%, -50%) rotate(360deg);
     }
 }
-
-
-

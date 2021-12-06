@@ -19,12 +19,21 @@ html{
         align-self: center;
         font-weight: 300;
         font-size: 16px;
-        background: linear-gradient(130deg, rgba(241,116,218,1) 0%, rgba(160,102,218,1) 100%);
         border-radius: 25px;
         height: 50px;
         border:none;
-        box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
+        box-shadow: rgb(0 0 0 / 20%) 0px 0px 5px 1px;
+        transition: .6s;
+        background-size: 200%;
+        z-index: 1;
+        background-image: linear-gradient(to left, #ff7de7,#f174da,#a066da,);
+        &:hover{
+            box-shadow: rgb(0 0 0 / 20%) 2px 2px 5px 2px;
+            background-position: right;
+            font-size: 16.5px;
+            }
     }
+
 .header{
     display: flex;
     flex-direction: column;
@@ -146,7 +155,8 @@ main{
             padding: 25px 10%;
             width: 90%;
             border: none;
-            box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
+            transition: .6s;
+            box-shadow: rgb(0 0 0 / 10%) 5.5px 7.1px 21px -6px;
             background-color: #f6f6f6;
             i{
                 color: $couleur-gris03;
@@ -155,6 +165,8 @@ main{
 
         &:hover{
             background-color: #f5edff;
+            box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
+
             i{
                 color: $couleur-primaire;
                 
@@ -216,6 +228,12 @@ main{
 .carte{
     position: relative;
     width: 100%;
+    transition: box-shadow .6s;
+    display: block;
+    border-radius: 15px;
+    &:hover{
+        box-shadow: rgb(0 0 0 / 25%) 5.5px 7.1px 21px -6px;   
+    }
     span{
         position: absolute;
         background-color: #99E2D0;
@@ -237,7 +255,7 @@ main{
     color: $couleur-black;
     background-color: $couleur-white;
     border-radius: 15px;
-    box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
+    box-shadow: rgb(0 0 0 / 10%) 5.5px 7.1px 21px -6px;
     a{
         display: flex;
         text-decoration: none;
@@ -293,26 +311,23 @@ main{
         background-size: cover;
         width: 100%;
         background-repeat: no-repeat;
+        background-position: center;
         }
 //////////////////////////////////////////////////////////////
 ////////////      RESTAURANTS - PAGE INTERIEUR    ///////////
 ////////////////////////////////////////////////////////////
     &-la-palette-du-gout{
         background-image: url(../img/restaurants/La-palette-du-gout.jpg);
-        background-position: center -1em;
         }
     &-la-note-enchantee{
         background-image: url(../img/restaurants/La-note-enchantee.jpg);
-        background-position: center -8em;
     }
     &-a-la-française{
         background-image: url(../img/restaurants/A-la-francaise.jpg);
-        background-position: center 0;
 
     }
     &-le-delice-des-sens{
         background-image: url(../img/restaurants/Le-delice-des-sens.jpg);
-        background-position: center -1em;
     }
     &-button{
         margin: 1em auto 2em;
@@ -419,6 +434,8 @@ main{
     display: flex;
     justify-content: space-between;
     flex: 1;
+    transition: width 0.4s;
+
     span:hover{
         width: 13em;
         transition: transform 0.3s;
@@ -437,7 +454,7 @@ main{
         position: absolute;
         top:50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-70%, -50%);
         transition: transform 0.3s;
         font-size: 2em;
     }
@@ -455,6 +472,19 @@ main{
         margin: -2.7em 0 0;
         position: relative;
         z-index: 10;
+    
+        .menu section{
+            &:nth-child(1){
+                animation: fadein 1s;
+            }
+            &:nth-child(2){
+                animation: fadein 5s;
+            }
+    
+            &:nth-child(3){
+                animation: fadein 8s;
+            }
+        }
     }
     h2{
         flex: 70%;
@@ -510,14 +540,13 @@ main{
         overflow: hidden;
         display: flex;
         height: 10vh;
-
+        animation: fadein 2s;
 
         span{
             display: flex;
             flex-wrap: wrap;
             gap: .8em;
             white-space: nowrap;
-            transition: width 0.4s;
             :hover{
                 transition: width 0.4s;
             }
@@ -608,8 +637,10 @@ main{
         }
     }
 }
-    .cartes section{
+    .cartes .menu section{
         justify-content: center;
+        width: 80%;
+        margin: 0 auto;
     }
    .restaurants{
        flex-wrap: wrap;
@@ -648,11 +679,12 @@ main{
     }
     .restaurants{
         justify-content: center;
+
     }
 }
 
 
-    @media(min-width:1024px){
+    @media(min-width:1064px){
         .fonctionnement ul{
             justify-content: center;
             button{
@@ -669,19 +701,22 @@ main{
                     flex: 3;
                     align-content: flex-start;
                     margin: 0;
-                    padding: 0 1em;
+                    padding: 0;
                 }
             }
         .btnplats + label {
             width: 30vw;
-
         }
      }
         .restaurants{
             .carte{
                 width: 33%;
             }
+            
         }
+        .like{
+            flex: 0.15;
+           }
     }
 
 
@@ -690,4 +725,31 @@ main{
     height: 30px;
     border-radius: 20px;
     background: $couleur-primaire;
+}
+.intro{
+    background: $couleur-tertiaire;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: loading 3s linear;
+    opacity: 0;
+    p{
+        font-size: 3em;
+        text-align: center;
+        font-family:"Shrikhand", cursive ;
+        margin: 15vh auto;
+        position: relative;
+        color: darken($couleur-tertiaire, 30%);
+        animation: big 1.5s infinite;
+    }
+}
+.chargement{
+    border: 10px solid rgba(0, 0, 255, 0);
+    border-left:5px solid darken($couleur-tertiaire, 30%);
+    border-radius: 150%;
+    width: 100px;
+    height: 100px;
+    animation: spin 1.5s infinite;
+    margin: 20vh auto;
+    position: relative;
 }
