@@ -387,7 +387,7 @@ template {
 @keyframes fadein {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -853,7 +853,7 @@ input [type=checkbox]:checked span, label svg:hover span {
   cursor: pointer;
   overflow: hidden;
   display: flex;
-  height: 10vh;
+  height: fit-content;
   animation: fadein 2s;
 }
 .btnplats + label span {

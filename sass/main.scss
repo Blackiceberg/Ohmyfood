@@ -539,7 +539,7 @@ main{
         cursor: pointer;
         overflow: hidden;
         display: flex;
-        height: 10vh;
+        height: fit-content;
         animation: fadein 2s;
 
         span{
