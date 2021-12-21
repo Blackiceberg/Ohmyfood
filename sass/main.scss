@@ -26,6 +26,7 @@ html{
         transition: .6s;
         background-size: 200%;
         z-index: 1;
+        cursor: pointer;
         background-image: linear-gradient(to left, #ff7de7,#f174da,#a066da,);
         &:hover{
             box-shadow: rgb(0 0 0 / 20%) 2px 2px 5px 2px;
@@ -158,6 +159,7 @@ main{
             transition: .6s;
             box-shadow: rgb(0 0 0 / 10%) 5.5px 7.1px 21px -6px;
             background-color: #f6f6f6;
+            cursor: pointer;
             i{
                 color: $couleur-gris03;
                 
@@ -316,6 +318,7 @@ main{
 //////////////////////////////////////////////////////////////
 ////////////      RESTAURANTS - PAGE INTERIEUR    ///////////
 ////////////////////////////////////////////////////////////
+
     &-la-palette-du-gout{
         background-image: url(../img/restaurants/La-palette-du-gout.jpg);
         }
@@ -335,9 +338,7 @@ main{
     h2{
         align-self: flex-start;
     }
-
-        
-    
+  
     &-header{
         img{
             height: 300px;
@@ -353,11 +354,26 @@ main{
     font-size: 2em;
     flex:0.15;
 }
+.check {
+    width: 0;
+    opacity: 0;
+    background-color: #99E2CF;
+    color: white;
+    transition: width 0.3s;
+    position: relative;
+    border-radius: 0 15px 15px 0;
+    justify-content: center;
 
+    i{
+        transform: translate(-70%, -50%);
+    }
+    
+}
 .cartes{
     .menu{
         margin: 0;
         padding: 0;
+        gap:2em;
         section{
             display: flex;
             margin: 0;
@@ -367,69 +383,89 @@ main{
             }
         }
     }
-}
+    ///////--- BOUTON_VALIDER ---////////
+    .btn{
+        background-color: #fff;
+        border-radius: 1em;
+        box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
+        cursor: pointer;
+        overflow: hidden;
+        display: flex;
+        animation: fadein 2s;
+        width: 100%;
+        justify-items: center;
+        height:80px;
+        &:hover > .check {
+            width: 100px;
+            flex: none;
+            opacity: 1;
+            display: flex;
+            i{
+                -webkit-animation: rotation 300ms linear 1;
+                top:50%;
+                left: 50%;        
+            }
+              h4{
+                width: 80%;
 
+              }  
+              p{
+                width: 80%;
 
-
-.carte input[type='checkbox']{ 
-    z-index: -9999;
-    position: absolute;
-
-    }
-
-    input [type='checkbox']:checked, label svg:hover { 
-        animation: animate-heart 0.4s linear forwards;
-        span{
-            width: 13em;
+            }
+            
         }
 
-    }
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: .5em;
+            flex: 1;
+            padding: 1em 0 0 1em;
+            width: 100%;
+            height: 100%;
+            
+            h4{
+                font-weight: 800;
+                font-size: 1.2em;
+                width: 100%;
+                height: 1.2em;
+                padding-left: 0;
+                text-overflow: ellipsis;
+                overflow: hidden;
 
-   
-@keyframes animate-heart {
-    0%{
-        stroke-dashoffset: 0;
-        stroke:rgb(0 0 0 / 80%)
 
-    }
-    40%{
-        stroke:rgb(0 0 0 / 25%);
+            }
+            p{
+                padding-left: 0;
+                height: 0.9em;
+                font-size: .9em;
+                width: 100%;
+                font-weight: 300;
+                height: .9em;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                
 
-    }
-    50%{
-        fill: transparent;
-        stroke:rgb(0 0 0 / 5%)
-
-    }
-    65%{
-        fill: url(#gradient-vertical);
-        fill-opacity:0.2;
-        stroke:rgb(0 0 0 / 1%)
-
-    }
-    80%{
-        fill: url(#gradient-vertical);
-        fill-opacity:0.5;
-        stroke:rgb(0 0 0 / 0%)
-
-    }
-    90%{
-        fill: transparent;
-        fill: url(#gradient-vertical);
-        fill-opacity:0.7;
-        stroke:rgb(0 0 0 / 0%)
-
-    }
-    100%{
-     
-    fill: url(#gradient-vertical);
-    stroke:rgb(0 0 0 / 0%)
-
+                
+            }
+        } 
+        b{
+            place-self: end;
+            padding: 1em;
+        }
+        
+        
     }
 }
+
+
+
+
 //////////////////////////////////////////////////////////////
 ////////////                CARTES                ///////////
 ////////////////////////////////////////////////////////////
+
 .descriptions-plats{
     display: flex;
     justify-content: space-between;
@@ -452,9 +488,7 @@ main{
     
     i{
         position: absolute;
-        top:50%;
-        left: 50%;
-        transform: translate(-70%, -50%);
+        justify-items: center;
         transition: transform 0.3s;
         font-size: 2em;
     }
@@ -511,73 +545,7 @@ main{
         flex: 10%;
         align-self: center;
     }
-    label:hover > .check{
-        width: 100px;
-        flex: none;
-        opacity: 1;
-        i{
-            -webkit-animation: rotation 300ms linear 1;
-            transform-origin:center;
-        }
-    }
-
-    input[type='checkbox']{ 
-        z-index: -9999;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        opacity: 0;
-        }
-
-     }
-    .btnplats + label{
-        background-color: $couleur-white;
-        border-radius: 1em;
-        box-shadow: rgb(0 0 0 / 20%) 5.5px 7.1px 21px -6px;
-        width: 90vw;
-        gap: 1em;
-        cursor: pointer;
-        overflow: hidden;
-        display: flex;
-        height: fit-content;
-        animation: fadein 2s;
-
-        span{
-            display: flex;
-            flex-wrap: wrap;
-            gap: .8em;
-            white-space: nowrap;
-            :hover{
-                transition: width 0.4s;
-            }
-
-            ins{
-                width: 100%;
-                text-decoration: none;
-                font-weight: 800;
-                font-size: 1.2em;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                padding: 1em 0 0 1em;
-            }
-            em{
-                font-size: 1em;
-                font-style: normal;
-                font-weight: 100;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                padding: 0 0 1em 1em;
-                width: 270px;
-            }
-        }
-        b{
-            align-self: end;
-            padding: 0 0 1em 0;
-        }
-    }
-
-    
-
+}
         //////////////////////////////////////////////////////////////
         ////////////                FOOTER                ///////////
         ////////////////////////////////////////////////////////////
@@ -692,20 +660,17 @@ main{
             }
         }
     .cartes{
-            .menu{
+        .menu{
+            display: flex;
+            flex: 100%;
+            section{
+                gap: 2em;
                 display: flex;
-                flex: 100%;
-                section{
-                    gap: 2em;
-                    display: flex;
-                    flex: 3;
-                    align-content: flex-start;
-                    margin: 0;
-                    padding: 0;
-                }
+                flex: 3;
+                align-content: flex-start;
+                margin: 0;
+                padding: 0;
             }
-        .btnplats + label {
-            width: 30vw;
         }
      }
         .restaurants{

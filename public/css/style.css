@@ -419,6 +419,7 @@ html {
   transition: 0.6s;
   background-size: 200%;
   z-index: 1;
+  cursor: pointer;
   background-image: linear-gradient(to left, #ff7de7, #f174da, #a066da);
 }
 .button:hover {
@@ -524,6 +525,7 @@ main h2 {
   transition: 0.6s;
   box-shadow: rgba(0, 0, 0, 0.1) 5.5px 7.1px 21px -6px;
   background-color: #f6f6f6;
+  cursor: pointer;
 }
 .fonctionnement ul button i {
   color: #7e7e7e;
@@ -694,9 +696,24 @@ main h2 {
   flex: 0.15;
 }
 
+.check {
+  width: 0;
+  opacity: 0;
+  background-color: #99E2CF;
+  color: white;
+  transition: width 0.3s;
+  position: relative;
+  border-radius: 0 15px 15px 0;
+  justify-content: center;
+}
+.check i {
+  transform: translate(-70%, -50%);
+}
+
 .cartes .menu {
   margin: 0;
   padding: 0;
+  gap: 2em;
 }
 .cartes .menu section {
   display: flex;
@@ -706,52 +723,68 @@ main h2 {
 .cartes .menu section h3 {
   padding: 1.5em 0em 0em;
 }
-
-.carte input[type=checkbox] {
-  z-index: -9999;
-  position: absolute;
+.cartes .btn {
+  background-color: #fff;
+  border-radius: 1em;
+  box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  animation: fadein 2s;
+  width: 100%;
+  justify-items: center;
+  height: 80px;
+}
+.cartes .btn:hover > .check {
+  width: 100px;
+  flex: none;
+  opacity: 1;
+  display: flex;
+}
+.cartes .btn:hover > .check i {
+  -webkit-animation: rotation 300ms linear 1;
+  top: 50%;
+  left: 50%;
+}
+.cartes .btn:hover > .check h4 {
+  width: 80%;
+}
+.cartes .btn:hover > .check p {
+  width: 80%;
+}
+.cartes .btn div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  flex: 1;
+  padding: 1em 0 0 1em;
+  width: 100%;
+  height: 100%;
+}
+.cartes .btn div h4 {
+  font-weight: 800;
+  font-size: 1.2em;
+  width: 100%;
+  height: 1.2em;
+  padding-left: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.cartes .btn div p {
+  padding-left: 0;
+  height: 0.9em;
+  font-size: 0.9em;
+  width: 100%;
+  font-weight: 300;
+  height: 0.9em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.cartes .btn b {
+  place-self: end;
+  padding: 1em;
 }
 
-input [type=checkbox]:checked, label svg:hover {
-  animation: animate-heart 0.4s linear forwards;
-}
-input [type=checkbox]:checked span, label svg:hover span {
-  width: 13em;
-}
-
-@keyframes animate-heart {
-  0% {
-    stroke-dashoffset: 0;
-    stroke: rgba(0, 0, 0, 0.8);
-  }
-  40% {
-    stroke: rgba(0, 0, 0, 0.25);
-  }
-  50% {
-    fill: transparent;
-    stroke: rgba(0, 0, 0, 0.05);
-  }
-  65% {
-    fill: url(#gradient-vertical);
-    fill-opacity: 0.2;
-    stroke: rgba(0, 0, 0, 0.01);
-  }
-  80% {
-    fill: url(#gradient-vertical);
-    fill-opacity: 0.5;
-    stroke: rgba(0, 0, 0, 0);
-  }
-  90% {
-    fill: transparent;
-    fill: url(#gradient-vertical);
-    fill-opacity: 0.7;
-    stroke: rgba(0, 0, 0, 0);
-  }
-  100% {
-    fill: url(#gradient-vertical);
-    stroke: rgba(0, 0, 0, 0);
-  }
-}
 .descriptions-plats {
   display: flex;
   justify-content: space-between;
@@ -774,9 +807,7 @@ input [type=checkbox]:checked span, label svg:hover span {
 }
 .check i {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-70%, -50%);
+  justify-items: center;
   transition: transform 0.3s;
   font-size: 2em;
 }
@@ -826,66 +857,6 @@ input [type=checkbox]:checked span, label svg:hover span {
 .cartes i {
   flex: 10%;
   align-self: center;
-}
-.cartes label:hover > .check {
-  width: 100px;
-  flex: none;
-  opacity: 1;
-}
-.cartes label:hover > .check i {
-  -webkit-animation: rotation 300ms linear 1;
-  transform-origin: center;
-}
-.cartes input[type=checkbox] {
-  z-index: -9999;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  opacity: 0;
-}
-
-.btnplats + label {
-  background-color: #fff;
-  border-radius: 1em;
-  box-shadow: rgba(0, 0, 0, 0.2) 5.5px 7.1px 21px -6px;
-  width: 90vw;
-  gap: 1em;
-  cursor: pointer;
-  overflow: hidden;
-  display: flex;
-  height: fit-content;
-  animation: fadein 2s;
-}
-.btnplats + label span {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8em;
-  white-space: nowrap;
-}
-.btnplats + label span :hover {
-  transition: width 0.4s;
-}
-.btnplats + label span ins {
-  width: 100%;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 1.2em;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  padding: 1em 0 0 1em;
-}
-.btnplats + label span em {
-  font-size: 1em;
-  font-style: normal;
-  font-weight: 100;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  padding: 0 0 1em 1em;
-  width: 270px;
-}
-.btnplats + label b {
-  align-self: end;
-  padding: 0 0 1em 0;
 }
 
 footer {
@@ -997,9 +968,6 @@ footer ul {
     align-content: flex-start;
     margin: 0;
     padding: 0;
-  }
-  .cartes .btnplats + label {
-    width: 30vw;
   }
 
   .restaurants .carte {
