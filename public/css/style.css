@@ -732,11 +732,15 @@ main h2 {
   display: flex;
   animation: fadein 2s;
   width: 100%;
+  max-width: 330px;
   justify-items: center;
   height: 80px;
 }
+.cartes .btn:hover > .description {
+  width: 20px;
+}
 .cartes .btn:hover > .check {
-  width: 100px;
+  width: 80px;
   flex: none;
   opacity: 1;
   display: flex;
@@ -745,12 +749,6 @@ main h2 {
   -webkit-animation: rotation 300ms linear 1;
   top: 50%;
   left: 50%;
-}
-.cartes .btn:hover > .check h4 {
-  width: 80%;
-}
-.cartes .btn:hover > .check p {
-  width: 80%;
 }
 .cartes .btn div {
   display: flex;
@@ -763,12 +761,13 @@ main h2 {
 }
 .cartes .btn div h4 {
   font-weight: 800;
-  font-size: 1.2em;
+  font-size: 1em;
   width: 100%;
   height: 1.2em;
   padding-left: 0;
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
 }
 .cartes .btn div p {
   padding-left: 0;
@@ -779,6 +778,7 @@ main h2 {
   height: 0.9em;
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
 }
 .cartes .btn b {
   place-self: end;
@@ -820,7 +820,7 @@ main h2 {
 .cartes section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1.5em 2em;
   padding: 2em 1.3em 0;
   margin: -2.7em 0 0;
@@ -907,7 +907,6 @@ footer ul {
   }
 
   .cartes .menu section {
-    justify-content: center;
     width: 80%;
     margin: 0 auto;
   }
@@ -957,6 +956,9 @@ footer ul {
     width: 20em;
   }
 
+  .cartes .btn {
+    max-width: 430px;
+  }
   .cartes .menu {
     display: flex;
     flex: 100%;
