@@ -434,11 +434,9 @@ main{
             }
             p{
                 padding-left: 0;
-                height: 0.9em;
                 font-size: .9em;
                 width: 100%;
                 font-weight: 300;
-                height: .9em;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
@@ -689,6 +687,13 @@ main{
     border-radius: 20px;
     background: $couleur-primaire;
 }
+
+
+//////////////////////////////////////////////////////////////
+////////////                  intro               ///////////
+////////////////////////////////////////////////////////////
+
+
 .intro{
     background: $couleur-tertiaire;
     position: absolute;

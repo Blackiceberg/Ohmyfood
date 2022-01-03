@@ -771,11 +771,9 @@ main h2 {
 }
 .cartes .btn div p {
   padding-left: 0;
-  height: 0.9em;
   font-size: 0.9em;
   width: 100%;
   font-weight: 300;
-  height: 0.9em;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
